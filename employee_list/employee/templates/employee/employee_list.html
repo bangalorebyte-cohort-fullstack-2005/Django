@@ -1,0 +1,30 @@
+{% extends "employee/base.html" %}
+
+{% block content %}
+<a href="{% url 'employee_form' %}" , class="btn btn-success">Add new item</a>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Full_name</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">Position</th>
+        <th scope='col'>actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for employee in employee_list %}
+      <tr>
+        <td>{{employee.id}}</td>
+        <td>{{employee.Full_name}}</td>
+        <td>{{employee.mobile}}</td>
+        <td>{{employee.Position}}</td>
+        <td>
+            <a href = "{% url 'employee_update' employee.id %}" class ="btn text-secondary">Update</a>
+            <button type="submit" class="btn"><i class="fa fa-trash-alt float-right" aria-hidden="true"></i></button>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endblock content %}
