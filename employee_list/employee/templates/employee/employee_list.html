@@ -21,7 +21,7 @@
         <td>{{employee.Position}}</td>
         <td>
             <a href = "{% url 'employee_update' employee.id %}" class ="btn text-secondary">Update</a>
-            <button type="submit" class="btn"><i class="fa fa-trash-alt float-right" aria-hidden="true"></i></button>
+            <a href= "{% url 'employee_delete' employee.id %}" class ="btn text-primary">Delete</a>
         </td>
       </tr>
       {% endfor %}
