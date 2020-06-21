@@ -20,4 +20,7 @@ urlpatterns = [
     path('todo/',include('todo.urls')),
     path('admin/', admin.site.urls),
 
+    #django_restframework
+    path('api/todo/',include('todo.api.urls'))
+
 ]
